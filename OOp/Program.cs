@@ -1,4 +1,6 @@
-﻿namespace OOp
+﻿using System.Threading.Channels;
+
+namespace OOp
 {
     internal class Program
     {
@@ -8,9 +10,10 @@
             Register register = new Register();
             Console.WriteLine("1 Login in");
             Console.WriteLine("2 Register");
+            Console.WriteLine("3 Exit");
 
             int secim = Convert.ToInt32(Console.ReadLine());
-
+            while (true) { 
 
             switch (secim)
             {
@@ -45,24 +48,34 @@
 
                     DateTime DogumTarixi = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
 
+                      
+                           int   yas = (DateTime.Now.Year - DogumTarixi.Year);
 
-                    //DateTime DogumTarixi = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
-                    int yas = (DateTime.Now.Year - DogumTarixi.Year);
+                        
+                       
+
+
+                        //DateTime DogumTarixi = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
 
 
 
-                    
 
-                    
-                    
 
-                    Console.WriteLine("Sifre daxil edin");
+
+
+
+                        Console.WriteLine("Sifre daxil edin");
                     string Newpassword = Console.ReadLine(); 
 
                     register.register(Newuser, Email, Phonenumber, DogumTarixi.ToString("MM/dd/yyyy"), Newpassword, yas);
-
+                  
                     break
                       ;
+
+                    case 3:
+                        Console.WriteLine("Cixh olundu");
+
+                        return;
 
                 default:
                     Console.WriteLine("Sef sechim");
@@ -71,7 +84,7 @@
                     break;
             }
 
-
+            }
 
 
 

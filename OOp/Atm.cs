@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace OOp
 {
@@ -17,6 +18,7 @@ namespace OOp
                 Console.WriteLine("2- Pul cek");
                 Console.WriteLine("3- Pul elave et");
                 Console.WriteLine("4- Chixis et");
+                Console.WriteLine("5 Market");
 
                 string secim = Console.ReadLine();
 
@@ -38,7 +40,7 @@ namespace OOp
                         Exit();
                         return;
 
-                      
+                   
 
                     default:
                         Console.WriteLine("Duzgun deyer daxil et");
@@ -57,19 +59,29 @@ namespace OOp
             Console.WriteLine("Chekmek istediyiniz miqdar daxil edin:");
             int cekilecek_miqdar = Convert.ToInt32(Console.ReadLine());
 
-            if (cekilecek_miqdar > balans)
+            if (cekilecek_miqdar > balans ||  cekilecek_miqdar < 0)
             {
-                Console.WriteLine("Balansda kifayet qeder mebleg yoxdur.");
-            }
+                Console.WriteLine("Balansda kifayet qeder mebleg yoxdur, Duzgun emlyat yerne yetirin");
+            } 
             else
+
             {
                 
-                double kesintiMiqdari = cekilecek_miqdar * 0.01; 
-                balans -= (cekilecek_miqdar + (int)kesintiMiqdari);
+                double kesintiMiqdari = cekilecek_miqdar * 0.01;
+                int kesinti = cekilecek_miqdar + (int)kesintiMiqdari;
 
-                Console.WriteLine("Cekilen mebleg: " + cekilecek_miqdar);
-                Console.WriteLine("Kesinti: " + (int)kesintiMiqdari);
-                Console.WriteLine("Qalan balans: " + balans);
+                if (balans < kesinti)
+                {
+                    Console.WriteLine("Faizi odyecek qeder balansin yoxdur!");
+                }
+                else
+                {
+                    balans -= kesinti;
+                    Console.WriteLine("Cekilen mebleg: " + cekilecek_miqdar);
+                    Console.WriteLine("Kesinti Faizi: " + (int)kesintiMiqdari);
+                    Console.WriteLine("Qalan balans: " + balans);
+                }
+              
             }
         }
 
@@ -81,9 +93,13 @@ namespace OOp
             Console.WriteLine("Yeni Balans: " + balans);
         }
 
+     
+
+
+
       public void Exit()
         {
-            Console.WriteLine("Hesabdan pul chixildi. Xosh gunler!");
+            Console.WriteLine("Proses sonlandi xosh gunler");
         }
     }
 }

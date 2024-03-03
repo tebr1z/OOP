@@ -8,10 +8,16 @@ namespace OOp
 {
     internal class Register
     {
+
+
+        Login Login =new Login();
+
+
+
         public void register(string Newuser ,string Email, string PhoneNumber, string DogumTarixi1, string Newpassowrd ,int yas) 
         {
 
-
+            string[] user = Login.userNames;
 
            
             Console.WriteLine("Yeni Istifadeci yaradildi");
