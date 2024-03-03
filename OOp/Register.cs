@@ -8,16 +8,19 @@ namespace OOp
 {
     internal class Register
     {
-        public void register(string Newuser ,string Email, string PhoneNumber, string dogumtarixi, string Newpassowrd ) 
+        public void register(string Newuser ,string Email, string PhoneNumber, string DogumTarixi1, string Newpassowrd ,int yas) 
         {
+
+
+
            
-            Console.WriteLine("Yeni User yardildi");
+            Console.WriteLine("Yeni Istifadeci yaradildi");
             Console.WriteLine("User  :  " +Newuser);
             Console.WriteLine("Email :  " +Email);
             Console.WriteLine("Phone Number" +PhoneNumber);
-            Console.WriteLine("Dogum taxiniz " + dogumtarixi + " Yasniz");
+            Console.WriteLine("Dogum taxiniz " + DogumTarixi1);
+            Console.WriteLine("Yasiniz"+yas);
             Console.WriteLine("Password:  "+Newpassowrd);
-           
 
 
         }

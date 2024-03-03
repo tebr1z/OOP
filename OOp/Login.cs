@@ -1,24 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOp
 {
     internal class Login
     {
+        public string[] userNames = { "admin", "user1", "user2" };
+        public string[] passwords = { "admin", "user1", "user2" };
 
-        public void Log_in (string username, string password)
+        public void Log_in(string username, string password)
         {
-            if (username == "admin" &&  password == "admin")   Console.WriteLine("Ugurlu girsh");
+            bool isAuthenticated = false;
 
-            else Console.WriteLine("Isfadeci adi ve ya sifre yalnisdi");
+            for (int i = 0; i < userNames.Length; i++)
+            {
+                if (userNames[i] == username && passwords[i] == password)
+                {
+                    isAuthenticated = true;
+                    break;
+                }
+            }
 
-
-
+            if (isAuthenticated)
+            {
+                Atm atm = new Atm();
+                atm.Start();
+            }
+            else
+            {
+                Console.WriteLine("UserName veya sifre yalnisdir.");
+            }
         }
-
-
     }
 }
