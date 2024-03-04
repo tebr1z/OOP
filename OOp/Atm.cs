@@ -13,13 +13,30 @@ namespace OOp
 
             while (true)
             {
-                Console.WriteLine("Bir Reqem secin");
-                Console.WriteLine("1- Balans goster");
-                Console.WriteLine("2- Pul cek");
-                Console.WriteLine("3- Pul elave et");
-                Console.WriteLine("4- Chixis et");
-                Console.WriteLine("5 Market");
 
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("Bir Reqem secin");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("1- Balans goster");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("2- Pul cek");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("3- Pul elave et");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("4- Market");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("5- Chixis et");
+
+                Console.WriteLine("===================================================================" +
+                    "===================");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
                 string secim = Console.ReadLine();
 
                 switch (secim)
@@ -37,10 +54,14 @@ namespace OOp
                         break;
 
                     case "4":
+                        Shops();
+                        break;
+
+                    case "5":
                         Exit();
                         return;
 
-                   
+              
 
                     default:
                         Console.WriteLine("Duzgun deyer daxil et");
@@ -93,6 +114,91 @@ namespace OOp
             Console.WriteLine("Yeni Balans: " + balans);
         }
 
+
+        public void Shops()
+        {
+
+            while (true) {
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("1 Mauslar 5 azn");
+
+                Console.WriteLine("======================================================================================");
+               
+                Console.WriteLine("2 Qulaqliq 2 azn");
+
+                Console.WriteLine("======================================================================================");
+               
+                Console.WriteLine("3 Klaviyatra 15 azn");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("4 usb flash kartlar 2 azn");
+
+                Console.WriteLine("======================================================================================");
+                Console.WriteLine("5 Exit");
+
+                Console.WriteLine("======================================================================================");
+
+                int price = Convert.ToInt32(Console.ReadLine());
+
+            switch (price)
+            {
+                case 1:
+                        int price1 = 300;
+                        double kesintiMiqdari = price1 * 0.01;
+                        int kesinti = price1 + (int)kesintiMiqdari;
+
+                        balans -= kesinti;
+
+                        if (balans<price)
+                        {
+                            Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
+                            break;
+                        }
+                       
+
+                        Console.WriteLine("Maus Sifaris verildi xosh gunler: Yeni Balans:     " + balans +"     Kesinti:    "+ kesintiMiqdari);
+                    break;
+
+                    case 2:
+                    balans -= 5;
+
+                        if (balans < price)
+                        {
+                            Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
+                            break;
+                        }
+                        Console.WriteLine("Qulaqliq Sifaris verildi xosh gunler: Yeni Balans" +balans);
+                    break;
+                        
+                case 3:
+                    balans -= 15;
+                        if (balans < price)
+                        {
+                            Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
+                            break;
+                        }
+                        Console.WriteLine("Sifaris verildi xosh gunler: Yeni Balans" +balans);
+                    break;
+
+                    case 4:
+                    balans -= 15;
+                        if (balans < price)
+                        {
+                            Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
+                            break;
+                        }
+                        Console.WriteLine("Usb Falsh Sifaris verildi xosh gunler: Yeni Balans" + balans);
+                    break;
+
+                case 5:
+                    Exit();
+                    return;
+            }
+
+            }
+
+        }
      
 
 
