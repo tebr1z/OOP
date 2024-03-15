@@ -64,7 +64,7 @@ namespace OOp
 
 
 
-                        Console.WriteLine("Sifre daxil edin");
+                        Console.WriteLine("Sifre daxil edin.");
                     string Newpassword = Console.ReadLine(); 
 
                     register.register(Newuser, Email, Phonenumber, DogumTarixi.ToString("MM/dd/yyyy"), Newpassword, yas);

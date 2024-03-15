@@ -81,7 +81,7 @@ namespace OOp
 
             if (cekilecek_miqdar > balans ||  cekilecek_miqdar < 0)
             {
-                Console.WriteLine("Balansda kifayet qeder mebleg yoxdur, Duzgun emlyat yerne yetirin");
+                Console.WriteLine("Balansda kifayet qeder mebleg yoxdur, Duzgun emlyat yerne yetirin.");
             } 
             else
 
