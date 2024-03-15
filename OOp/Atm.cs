@@ -32,8 +32,7 @@ namespace OOp
                 Console.WriteLine("======================================================================================");
                 Console.WriteLine("5- Chixis et");
 
-                Console.WriteLine("===================================================================" +
-                    "===================");
+                Console.WriteLine("======================================================================================");
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -145,6 +144,8 @@ namespace OOp
             {
                 case 1:
                         int price1 = 300;
+                       
+                     
                         double kesintiMiqdari = price1 * 0.01;
                         int kesinti = price1 + (int)kesintiMiqdari;
 
@@ -161,37 +162,54 @@ namespace OOp
                     break;
 
                     case 2:
-                    balans -= 5;
+                        int price2 = 300;
+
+                        double kesintiMiqdari2 = price2 * 0.01;
+                        int kesinti2 = price2 + (int)kesintiMiqdari2;
+
+                        balans -= kesinti2;
 
                         if (balans < price)
                         {
                             Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
                             break;
                         }
-                        Console.WriteLine("Qulaqliq Sifaris verildi xosh gunler: Yeni Balans" +balans);
+                        Console.WriteLine("Qulaqliq Sifaris verildi xosh gunler: Yeni Balans"      + balans +    "Kesinti:" + kesintiMiqdari2  );
                     break;
                         
                 case 3:
-                    balans -= 15;
+                        int price3 = 300;
+
+                        double kesintiMiqdari3 = price3 * 0.01;
+                        int kesinti3 = price3 + (int)kesintiMiqdari3;
+
+                        balans -= kesinti3;
                         if (balans < price)
                         {
                             Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
                             break;
                         }
-                        Console.WriteLine("Sifaris verildi xosh gunler: Yeni Balans" +balans);
+                        Console.WriteLine("Sifaris verildi xosh gunler: Yeni Balans           " + balans + "           Kesinti:          " + kesintiMiqdari3);
                     break;
 
-                    case 4:
-                    balans -= 15;
+                    case 4: //abstaction
+
+                        int price4 = 300;
+
+                        double kesintiMiqdari4 = price4 * 0.01;
+                        int kesinti4 = price4 + (int)kesintiMiqdari4;
+
+                        balans -= kesinti4;
                         if (balans < price)
                         {
                             Console.WriteLine("Balnsda kifayet qeder pul yoxdur");
                             break;
                         }
-                        Console.WriteLine("Usb Falsh Sifaris verildi xosh gunler: Yeni Balans" + balans);
+                        Console.WriteLine("Usb Falsh Sifaris verildi xosh gunler: Yeni Balans               "  + balans + "           Kesinti:          " + kesintiMiqdari4);
                     break;
 
                 case 5:
+
                     Exit();
                     return;
             }
